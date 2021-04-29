@@ -1,7 +1,8 @@
 import React from 'react';
 import '../App.css';
 
-class Form extends React.Component {   
+class Form extends React.Component {
+    //props是什么   
     constructor(props)
     {
         super(props);
@@ -14,6 +15,7 @@ class Form extends React.Component {
         this.Submit=this.Submit.bind(this);
         this.handleChange=this.handleChange.bind(this);
     };
+    //为什么要有event
     Submit(event){
         if(!this.state.value){
             alert("Please input your name");
@@ -22,9 +24,11 @@ class Form extends React.Component {
         }else{
             alert("Name:"+this.state.value+"\rAge:"+this.state.age+"\rGender:"+this.state.gender+"\rPhone:"+this.state.phone+"\rMessage" +this.state.message);
         }
+       // 这是啥
         event.preventDefault();
     };
     handleChange(event){
+        //[event.target.name]:event.target.value是什么过程
         this.setState({[event.target.name]:event.target.value });
     }
   render(){return (
