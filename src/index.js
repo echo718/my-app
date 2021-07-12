@@ -1,15 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Form from './component/form';
-import Nav from './component/nav';
+import Hooks from './component/Hooks';
+import HookReducer from './component/HookReducer';
+// import Form from './component/form';
+// import Nav from './component/nav';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Nav />,
-    <Form />
-
+    {/* <Nav />,
+    <Form /> */}
+    <Hooks />
+    <HookReducer />
   </React.StrictMode>,
   document.getElementById('root')
 );
