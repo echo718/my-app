@@ -1,7 +1,9 @@
+
 form {
   text-align: left;
   font-size: 20px;;
 }
+
 form label{display: block;}
 form input,select{height: 50px;width: 400px;margin-top: 10px;margin-bottom: 10px;}
 #btn{font-size:35px;margin-top:40px;}

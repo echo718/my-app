@@ -1,35 +1,39 @@
-import React, {useReducer}from 'react';
-import {CounterReducer,defaultState} from './CounterReducer';
-import HookContext from './HookContext';
-import ReactContext from './context/ReactContext';
+import React, { useReducer } from "react";
+import { CounterReducer, defaultState } from "./CounterReducer";
 
-let initialState  = 0
+let initialState = 0;
 
-export default function HookReducer() {    
-   
-    const [state,action] = useReducer(CounterReducer,defaultState)
+export default function HookReducer() {
 
-    return (
-        <ReactContext.Provider value = { { state,action}}> 
-            <div>
-            <HookContext></HookContext>
-            Cart : <button 
-                        type="button" 
-                        style={{margin:"10px"}}
-                        onClick={ () => { action( {type:"inc",payload:{count:--initialState }} )}}>
-                         -
-                        </button>
+  const [state, action] = useReducer(CounterReducer, defaultState);
 
-                       {state.count}
+  console.log(state, action)
+  return (
+    <div className="container">
+      Cart :{" "}
+      <button
+        className="btn btn-danger"
+        type="button"
+        style={{ margin: "10px" }}
+        onClick={() => {
+          action({ type: "dec", payload: { count: --initialState } });
+        }}
+      >
+        -
+      </button>
 
-                      <button 
-                       type="button" 
-                       style={{margin:"10px"}} 
-                       onClick={ () => { action( {type:"inc",payload:{count:++initialState }} )}} >
-                        +
-                      </button>
-        </div>
-        </ReactContext.Provider>
-       
-    )
+      <span> {state.count}</span>
+      
+      <button
+        className="btn btn-danger"
+        type="button"
+        style={{ margin: "10px" }}
+        onClick={() => {
+          action({ type: "inc", payload: { count: ++initialState } });
+        }}
+      >
+        +
+      </button>
+    </div>
+  );
 }

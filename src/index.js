@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Hooks from './component/Hooks';
-import HookReducer from './component/HookReducer';
+//import HooksUseState from './component/HooksUseState';
+//import HooksUseEffect from './component/HooksUseEffect';
+//import HookReducer from './component/HookReducer';
+import HookReducerAndContext from './component/HookReducerAndContext';
+
 // import Form from './component/form';
 // import Nav from './component/nav';
 import reportWebVitals from './reportWebVitals';
@@ -10,9 +13,11 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <React.StrictMode>
     {/* <Nav />,
-    <Form /> */}
-    <Hooks />
-    <HookReducer />
+    // <Form /> */}
+     {/* <HooksUseState /> */}
+     {/* <HooksUseEffect /> */}
+    {/* <HookReducer /> */}
+    <HookReducerAndContext />
   </React.StrictMode>,
   document.getElementById('root')
 );
